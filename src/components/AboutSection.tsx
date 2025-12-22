@@ -1,6 +1,7 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Heart, Users, Globe2 } from "lucide-react";
+import womenGroup from "@/assets/women-group.png";
 
 const AboutSection: React.FC = () => {
   const { t } = useLanguage();
@@ -32,33 +33,39 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Right - Stats/Icons */}
-            <div className="grid grid-cols-2 gap-6">
-              <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-soft hover:shadow-lg transition-shadow duration-300">
-                <Users className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">Community Led</h3>
-                <p className="text-muted-foreground text-sm">
-                  Built by and for immigrant women
-                </p>
+            {/* Right - Illustration and Stats */}
+            <div className="space-y-6">
+              {/* Women Group Illustration */}
+              <div className="flex justify-center">
+                <img 
+                  src={womenGroup} 
+                  alt="Diverse group of women illustration" 
+                  className="w-full max-w-md h-auto"
+                />
               </div>
 
-              <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-soft hover:shadow-lg transition-shadow duration-300">
-                <Globe2 className="w-10 h-10 text-accent mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">Inclusive</h3>
-                <p className="text-muted-foreground text-sm">
-                  Supporting FLINTA & queer communities
-                </p>
+              {/* Stats Row */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-card border border-border/50 shadow-soft text-center">
+                  <Users className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="text-sm font-medium text-foreground">Community Led</p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-card border border-border/50 shadow-soft text-center">
+                  <Globe2 className="w-8 h-8 text-accent mx-auto mb-2" />
+                  <p className="text-sm font-medium text-foreground">Inclusive</p>
+                </div>
               </div>
 
-              <div className="col-span-2 p-6 rounded-2xl bg-primary text-primary-foreground">
+              <div className="p-4 rounded-xl bg-primary text-primary-foreground">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-primary-foreground/80 text-sm mb-1">Serving</p>
-                    <p className="text-2xl font-bold">Kassel & Beyond</p>
+                    <p className="text-primary-foreground/80 text-xs mb-1">Serving</p>
+                    <p className="text-xl font-bold">Kassel & Beyond</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-primary-foreground/80 text-sm mb-1">Since</p>
-                    <p className="text-2xl font-bold">2022</p>
+                    <p className="text-primary-foreground/80 text-xs mb-1">Since</p>
+                    <p className="text-xl font-bold">2022</p>
                   </div>
                 </div>
               </div>

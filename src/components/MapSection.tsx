@@ -1,6 +1,7 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Map, MapPin, Shield, Users, MessageCircle, Sparkles } from "lucide-react";
+import mapsBackground from "@/assets/maps.png";
 
 const MapSection: React.FC = () => {
   const { t } = useLanguage();
@@ -8,8 +9,14 @@ const MapSection: React.FC = () => {
   const featureIcons = [MapPin, Shield, Users, MessageCircle];
 
   return (
-    <section id="map" className="py-20 md:py-32 bg-gradient-hero overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="map" className="py-20 md:py-32 overflow-hidden relative">
+      {/* Background Map Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{ backgroundImage: `url(${mapsBackground})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
