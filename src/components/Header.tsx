@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoElas from "@/assets/logo-elas.png";
 
 const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -28,11 +29,14 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <span className="text-2xl md:text-3xl font-display font-bold text-primary">
-              ELAS
-            </span>
-            <span className="text-xs md:text-sm text-muted-foreground font-medium">e.V.</span>
+          <a href="#" className="flex items-center gap-3">
+            <img src={logoElas} alt="ELAS e.V. Logo" className="w-10 h-10 md:w-12 md:h-12" />
+            <div className="flex items-baseline gap-1">
+              <span className="text-xl md:text-2xl font-display font-bold text-primary">
+                ELAS
+              </span>
+              <span className="text-xs md:text-sm text-muted-foreground font-medium">e.V.</span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
