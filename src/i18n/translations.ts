@@ -79,6 +79,8 @@ export const translations = {
     contact: {
       title: "Get in Touch",
       location: "Kassel, Germany",
+      address: "Treppenstraße 4, 34117 Kassel, Germany",
+      phone: "+49 1575 1176816",
       email: "hello@elas-de.org",
       registry: "Association Register: VR 5884 (District Court Kassel)",
       followUs: "Follow Us",
@@ -169,6 +171,8 @@ export const translations = {
     contact: {
       title: "Kontakt",
       location: "Kassel, Deutschland",
+      address: "Treppenstraße 4, 34117 Kassel, Deutschland",
+      phone: "+49 1575 1176816",
       email: "hello@elas-de.org",
       registry: "Vereinsregister: VR 5884 (Amtsgericht Kassel)",
       followUs: "Folgen Sie uns",

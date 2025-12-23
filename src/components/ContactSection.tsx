@@ -1,6 +1,6 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { MapPin, Mail, FileText, Instagram, ExternalLink } from "lucide-react";
+import { MapPin, Mail, FileText, Phone, Instagram, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ContactSection: React.FC = () => {
@@ -21,16 +21,16 @@ const ContactSection: React.FC = () => {
               </h2>
 
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-primary-foreground/20">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-medium text-lg">{t.contact.location}</p>
+                    <p className="font-medium text-lg">{t.contact.address}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-primary-foreground/20">
                     <Mail className="w-5 h-5" />
                   </div>
@@ -44,7 +44,21 @@ const ContactSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-xl bg-primary-foreground/20">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <a
+                      href="tel:+4915751176816"
+                      className="font-medium text-lg hover:underline"
+                    >
+                      {t.contact.phone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-primary-foreground/20">
                     <FileText className="w-5 h-5" />
                   </div>
