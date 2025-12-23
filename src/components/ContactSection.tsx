@@ -7,7 +7,10 @@ const ContactSection: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-primary text-primary-foreground">
+    <section
+      id="contact"
+      className="py-20 md:py-32 bg-primary text-primary-foreground"
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
@@ -46,7 +49,9 @@ const ContactSection: React.FC = () => {
                     <FileText className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-primary-foreground/90">{t.contact.registry}</p>
+                    <p className="text-primary-foreground/90">
+                      {t.contact.registry}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -58,17 +63,19 @@ const ContactSection: React.FC = () => {
                 <p className="text-primary-foreground/80 mb-4">
                   {t.contact.websiteNotice}
                 </p>
-                <h3 className="text-xl font-semibold mb-6">{t.contact.followUs}</h3>
+                <h3 className="text-xl font-semibold mb-6">
+                  {t.contact.followUs}
+                </h3>
 
                 <div className="flex flex-col gap-4">
                   <a
-                    href="https://www.instagram.com/elas_de"
+                    href="https://www.instagram.com/elas_e.v"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-xl bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors duration-200"
                   >
                     <Instagram className="w-6 h-6" />
-                    <span className="font-medium">@elas_de</span>
+                    <span className="font-medium">@elas_e.v</span>
                     <ExternalLink className="w-4 h-4 ml-auto opacity-60" />
                   </a>
 
@@ -90,7 +97,7 @@ const ContactSection: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="w-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="w-full border-primary-foreground/30 text-primary hover:bg-primary hover:text-primary-foreground"
                 asChild
               >
                 <a href="mailto:hello@elas-de.org">
