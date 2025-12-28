@@ -29,8 +29,8 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
-            <img src={logoElas} alt="ELAS e.V. Logo" className="w-10 h-10 md:w-12 md:h-12" />
+          <a href="/" className="flex items-center gap-3" aria-label="ELAS e.V. Home">
+            <img src={logoElas} alt="ELAS e.V. Logo" width={48} height={48} className="w-10 h-10 md:w-12 md:h-12" />
             <div className="flex items-baseline gap-1">
               <span className="text-xl md:text-2xl font-display font-bold text-primary">
                 ELAS
@@ -42,13 +42,14 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
+                href={item.href}
+                onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200"
               >
                 {item.label}
-              </button>
+              </a>
             ))}
           </nav>
 
@@ -79,13 +80,15 @@ const Header: React.FC = () => {
           <nav className="md:hidden py-4 border-t border-border/50">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
-                <button
+                <a
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
+                  href={item.href}
+                  onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
                   className="py-2 px-4 text-left text-foreground/80 hover:text-primary hover:bg-muted/50 rounded-md transition-colors duration-200"
+                  aria-label={`Navigate to ${item.label}`}
                 >
                   {item.label}
-                </button>
+                </a>
               ))}
             </div>
           </nav>

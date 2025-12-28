@@ -40,6 +40,8 @@ const AboutSection: React.FC = () => {
                 <img 
                   src={womenGroup} 
                   alt="Diverse group of women illustration" 
+                  width={400}
+                  height={300}
                   className="w-full max-w-md h-auto"
                 />
               </div>
