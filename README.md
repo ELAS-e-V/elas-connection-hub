@@ -1,39 +1,34 @@
-# Welcome to your Lovable project
+# ELAS Landing Page — elas-connection-hub 🧭
 
-## Project info
+## 🔎 Description
+Landing page project for **ELAS e.V.**, built with a focus on accessibility, internationalization (DE/EN), and performance.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Key files:**
+- `index.html` — meta tags, Open Graph, JSON-LD and font preloads
+- `public/` — `sitemap.xml`, `robots.txt`, `og-image.v1.png`, `favicon.ico`
+- `src/contexts/LanguageContext.tsx` — synchronizes meta tags per language
 
-## How can I edit this code?
+## ▶️ Local development
+There are two common ways to work on the project:
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+**1) Locally (IDE):**
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
+```
+
+**2) Remotely (Lovable / Codespaces):**
+- Use the Lovable interface to edit directly or launch a Codespace for a ready environment.
+
+**Tip:** to test performance, build and serve the preview:
+
+```sh
+npm run build
+npm run preview
+# then run Lighthouse against the preview URL
 ```
 
 **Edit a file directly in GitHub**
@@ -50,9 +45,8 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
-
-This project is built with:
+## 🛠️ Technology
+This project uses:
 
 - Vite
 - TypeScript
@@ -60,14 +54,53 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 📦 Useful scripts
+- `npm run dev` — development
+- `npm run build` — production build
+- `npm run preview` — serve the production build locally
+- `npm run lint` — ESLint
+- `npm run lint:css` — Stylelint
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🚀 Deployment
+You can deploy to your preferred platform (Vercel, Netlify, GitHub Pages). For local production testing, use `npm run build` + `npm run preview`.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🚀 SEO & Performance (what was applied)
+- Added Open Graph and Twitter card (`public/og-image.v1.png`).
+- Added JSON‑LD (Organization) to `index.html`.
+- Configured `hreflang` and `canonical` tags.
+- Non-blocking preload of Google Fonts with a `<noscript>` fallback.
+- `width`/`height` attributes added to images to reduce CLS.
+- Created `public/sitemap.xml` and referenced it in `public/robots.txt`.
+- Dynamic meta tag updates per language via `src/contexts/LanguageContext.tsx`.
+
+Recommendations: self-host fonts (WOFF2), serve images as WebP/AVIF, and generate language-specific OG images.
+
+---
+
+## 🧪 How to audit (Lighthouse)
+Run Lighthouse against the preview build for realistic results (disable extensions during the test):
+
+```sh
+# start preview (after build)
+npm run preview
+
+# run Lighthouse (example)
+npx lighthouse http://localhost:4173 --chrome-flags='--disable-extensions --no-sandbox --headless' --output html --output-path=./lighthouse-report.html
+```
+
+---
+
+## 🤝 Contributing
+- Open a branch and send PRs with a clear description (e.g. `chore(seo): improve meta tags`).
+- Run `npm run lint` before opening a PR.
+
+---
+
+## ✉️ Contact
+For content questions or updates: `hello@elas-de.org`
