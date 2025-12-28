@@ -1,28 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ELAS e.V. — Empowering Migrant Communities in Germany</title>
-    <meta name="description" content="ELAS e.V. is a registered non-profit association in Germany providing information and support for migrant women, FLINTA, queer and marginalized communities in Kassel." />
-    <meta name="keywords" content="ELAS, non-profit, Germany, Kassel, migrant women, FLINTA, queer, community support, integration" />
+    <meta name="description" content="ELAS e.V. — Registered non-profit supporting migrant women and marginalized communities in Kassel, Germany." />
     <meta name="author" content="ELAS e.V." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- Language alternates -->
+    <link rel="alternate" href="https://elas-de.org/" hreflang="de" />
+    <link rel="alternate" href="https://elas-de.org/en/" hreflang="en" />
+    <link rel="canonical" href="https://elas-de.org" />
+
+    <!-- Structured data (Organization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ELAS e.V.",
+      "url": "https://elas-de.org",
+      "logo": "https://elas-de.org/src/assets/logo-elas.png",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "email": "hello@elas-de.org",
+        "contactType": "information",
+        "areaServed": "DE",
+        "availableLanguage": ["German","English"]
+      }],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Treppenstraße 4",
+        "addressLocality": "Kassel",
+        "postalCode": "34117",
+        "addressCountry": "DE"
+      }
+    }
+    </script>
 
     <meta property="og:title" content="ELAS e.V. — Empowering Migrant Communities" />
     <meta property="og:description" content="A registered non-profit association providing information and support for migrant women, FLINTA, queer and marginalized communities." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="https://elas-de.org/og-image.v1.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ELAS e.V. — Empowering Migrant Communities" />
+    <meta property="og:locale" content="de_DE" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ELAS e.V. — Empowering Migrant Communities" />
     <meta name="twitter:description" content="Non-profit support for migrant women, FLINTA, and marginalized communities in Germany." />
+    <meta name="twitter:image" content="https://elas-de.org/og-image.v1.png" />
+    <meta name="twitter:image:alt" content="ELAS e.V. — Empowering Migrant Communities" />
 
-    <link rel="canonical" href="https://elas-de.org" />
-    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Preload Google Fonts stylesheet and make it non-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Fallback for browsers with JavaScript disabled -->
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

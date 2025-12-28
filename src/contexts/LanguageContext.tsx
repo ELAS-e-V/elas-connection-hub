@@ -14,6 +14,28 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const t = translations[language];
 
+  React.useEffect(() => {
+    // Keep the document language and key meta tags in sync with selected language
+    try {
+      document.documentElement.lang = language;
+      document.title = `${t.hero.title} — ELAS e.V.`;
+
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) metaDescription.setAttribute('content', t.hero.subtitle);
+
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) (ogDesc as HTMLMetaElement).setAttribute('content', t.hero.subtitle);
+
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) (twitterDesc as HTMLMetaElement).setAttribute('content', t.hero.subtitle);
+
+      const ogLocale = document.querySelector('meta[property="og:locale"]');
+      if (ogLocale) (ogLocale as HTMLMetaElement).setAttribute('content', language === 'de' ? 'de_DE' : 'en_US');
+    } catch (err) {
+      // no-op in non-browser environments
+    }
+  }, [language, t]);
+
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}

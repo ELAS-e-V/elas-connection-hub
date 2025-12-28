@@ -1,3 +1,5 @@
+Sitemap: https://elas-de.org/sitemap.xml
+
 User-agent: Googlebot
 Allow: /
 
