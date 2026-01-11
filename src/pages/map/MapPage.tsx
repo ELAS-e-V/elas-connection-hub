@@ -1,41 +1,75 @@
 import { useState } from "react";
 import MapView from "@/map/MapView";
-import { Menu } from "lucide-react";
+import { Menu, X, Layers } from "lucide-react";
+import { MAP_CATEGORIES } from "@/map/config/categories";
+
+const HEADER_HEIGHT = "3.5rem"; // 56px
 
 const MapPage = () => {
   const [category, setCategory] = useState<string | undefined>();
   const [open, setOpen] = useState(false);
 
+  const handleSelect = (value?: string) => {
+    setCategory(value);
+    setOpen(false);
+  };
+
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col overflow-hidden">
       {/* Header */}
-      <header className="h-14 flex items-center justify-between px-4 border-b md:px-6">
+      <header
+        className="flex items-center justify-between px-4 border-b md:px-6"
+        style={{ height: HEADER_HEIGHT }}
+      >
         <a href="/" className="text-sm text-muted-foreground hover:underline">
           ← Back to home
         </a>
 
-        {/* Mobile menu button */}
         <button
           onClick={() => setOpen(true)}
           className="md:hidden p-2 rounded-md border"
+          aria-label="Open map filters"
         >
           <Menu size={20} />
         </button>
       </header>
 
       {/* Content */}
-      <div className="flex flex-1 overflow-hidden">
+      <div
+        className="flex flex-1 overflow-hidden"
+        style={{ height: `calc(100vh - ${HEADER_HEIGHT})` }}
+      >
         {/* Sidebar desktop */}
-        <aside className="hidden md:block w-72 border-r p-6">
-          <h2 className="text-lg font-semibold mb-4">Explore the map</h2>
+        <aside className="hidden md:flex w-72 flex-col border-r px-4 py-4 gap-4">
+          <h2 className="text-base font-semibold">Explore the map</h2>
 
-          <div className="space-y-3">
-            {categories.map((c) => (
+          {category && (
+            <button
+              onClick={() => handleSelect(undefined)}
+              className="flex items-center gap-2 rounded-md border px-3 py-2 text-sm hover:bg-muted"
+            >
+              <Layers size={18} />
+              All categories
+            </button>
+          )}
+
+          <div className="flex flex-col gap-2">
+            {MAP_CATEGORIES.map((c) => (
               <button
-                key={c.value}
-                onClick={() => setCategory(c.value)}
-                className="w-full rounded-md border px-4 py-2 text-left hover:bg-muted"
+                key={c.id}
+                onClick={() => handleSelect(c.id)}
+                className={`flex items-center gap-3 rounded-md border px-3 py-2 text-sm transition
+                  ${
+                    category === c.id
+                      ? "bg-muted font-medium"
+                      : "hover:bg-muted"
+                  }`}
               >
+                <img
+                  src={`/icons/${c.icon}`}
+                  alt=""
+                  className="h-5 w-5"
+                />
                 {c.label}
               </button>
             ))}
@@ -43,29 +77,66 @@ const MapPage = () => {
         </aside>
 
         {/* Map */}
-        <main className="flex-1 p-2 md:p-6">
-          <div className="h-full w-full overflow-hidden rounded-xl border">
+        <main className="flex-1 p-2 md:p-4 overflow-hidden">
+          <div
+            className={`h-full w-full rounded-xl border relative z-0 ${
+              open ? "pointer-events-none" : ""
+            }`}
+          >
             <MapView category={category} />
           </div>
         </main>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Bottom Sheet */}
       {open && (
-        <div className="fixed inset-0 z-50 bg-black/40 md:hidden">
-          <div className="absolute left-0 top-0 h-full w-72 bg-background p-6 shadow-lg">
-            <h2 className="text-lg font-semibold mb-4">Explore the map</h2>
+        <div className="fixed inset-0 z-[2000] md:hidden">
+          {/* Overlay */}
+          <div
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setOpen(false)}
+          />
 
-            <div className="space-y-3">
-              {categories.map((c) => (
+          {/* Sheet */}
+          <div className="absolute bottom-0 left-0 right-0 rounded-t-xl bg-background p-4 shadow-xl">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-base font-semibold">Categories</h2>
+              <button
+                onClick={() => setOpen(false)}
+                className="p-2 rounded-md border"
+                aria-label="Close"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              {category && (
                 <button
-                  key={c.value}
-                  onClick={() => {
-                    setCategory(c.value);
-                    setOpen(false);
-                  }}
-                  className="w-full rounded-md border px-4 py-2 text-left hover:bg-muted"
+                  onClick={() => handleSelect(undefined)}
+                  className="col-span-2 flex items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm hover:bg-muted"
                 >
+                  <Layers size={18} />
+                  All categories
+                </button>
+              )}
+
+              {MAP_CATEGORIES.map((c) => (
+                <button
+                  key={c.id}
+                  onClick={() => handleSelect(c.id)}
+                  className={`flex items-center gap-2 rounded-md border px-3 py-2 text-sm transition
+                    ${
+                      category === c.id
+                        ? "bg-muted font-medium"
+                        : "hover:bg-muted"
+                    }`}
+                >
+                  <img
+                    src={`/icons/${c.icon}`}
+                    alt=""
+                    className="h-4 w-4"
+                  />
                   {c.label}
                 </button>
               ))}
@@ -78,12 +149,3 @@ const MapPage = () => {
 };
 
 export default MapPage;
-
-const categories = [
-  { label: "Health", value: "health" },
-  { label: "Legal support", value: "legal-support" },
-  { label: "Education", value: "education" },
-  { label: "Culture", value: "culture" },
-  { label: "Work", value: "work" },
-  { label: "Social services", value: "social-service" },
-];
