@@ -90,6 +90,24 @@ export const translations = {
       rights: "All rights reserved.",
       nonprofit: "Registered non-profit association (gemeinnütziger Verein) in Germany",
     },
+    common: {
+      backToHome: "Back to home",
+    },
+    mapUI: {
+      explore: "Explore the map",
+      allCategories: "All categories",
+      categories: {
+        health: "Health",
+        legalSupport: "Legal support",
+        education: "Education",
+        culture: "Culture",
+        work: "Work",
+        socialService: "Social services",
+        housing: "Housing",
+        womenRights: "Women’s rights",
+        counseling: "Counseling",
+      },
+    },
   },
   de: {
     nav: {
@@ -181,6 +199,24 @@ export const translations = {
     footer: {
       rights: "Alle Rechte vorbehalten.",
       nonprofit: "Eingetragener gemeinnütziger Verein in Deutschland",
+    },
+    common: {
+      backToHome: "Zurück zur Startseite",
+    },
+    mapUI: {
+      explore: "Karte entdecken",
+      allCategories: "Alle Kategorien",
+      categories: {
+        health: "Gesundheit",
+        legalSupport: "Rechtsberatung",
+        education: "Bildung",
+        culture: "Kultur",
+        work: "Arbeit",
+        socialService: "Soziale Dienste",
+        housing: "Wohnen",
+        womenRights: "Frauenrechte",
+        counseling: "Beratung",
+      },
     },
   },
 };

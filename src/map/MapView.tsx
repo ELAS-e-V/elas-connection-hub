@@ -20,7 +20,7 @@ export interface MapViewProps {
 const CENTER: LatLngExpression = [51.3133, 9.4989];
 const OVERVIEW_ZOOM = 11;
 const CATEGORY_ZOOM_PADDING = 80;
-const OVERVIEW_HIGHLIGHT_LIMIT = 15; // 👈 quantos pins ficam visíveis no overview
+const OVERVIEW_HIGHLIGHT_LIMIT = 15; //quantos pins ficam visíveis no overview
 
 /* =========================
  * Componente
