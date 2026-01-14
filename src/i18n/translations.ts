@@ -34,8 +34,8 @@ export const translations = {
     },
     map: {
       title: "Interactive Map",
-      comingSoon: "Coming Soon",
-      description: "Our interactive map tool is currently under construction. Soon you'll be able to discover safe spaces, resources, and community services in Kassel — all in one place.",
+      exploreCta: "Explore the map",
+      description: "Our interactive map helps you discover safe spaces, resources, and community services in Kassel — all in one place.",
       features: [
         "Find safe and welcoming spaces",
         "Locate community resources",
@@ -144,8 +144,8 @@ export const translations = {
     },
     map: {
       title: "Interaktive Karte",
-      comingSoon: "Demnächst verfügbar",
-      description: "Unser interaktives Kartentool befindet sich derzeit im Aufbau. Bald können Sie sichere Orte, Ressourcen und Gemeinschaftsdienste in Kassel entdecken — alles an einem Ort.",
+      exploreCta: "Karte entdecken",
+      description: "Unsere interaktive Karte hilft Ihnen, sichere Orte, Ressourcen und Gemeinschaftsdienste in Kassel zu entdecken — alles an einem Ort.",
       features: [
         "Sichere und einladende Orte finden",
         "Gemeinschaftsressourcen lokalisieren",

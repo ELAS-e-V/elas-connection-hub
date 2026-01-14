@@ -57,7 +57,7 @@ const MapPage = () => {
 
         {/* Map */}
         <main className="flex-1 overflow-hidden p-2 md:p-4">
-          <div className="h-full w-full rounded-xl border overflow-hidden">
+          <div className="h-full w-full rounded-xl border overflow-hidden relative z-0">
             <MapView category={category} />
           </div>
         </main>
