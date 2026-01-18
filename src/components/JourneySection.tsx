@@ -60,6 +60,23 @@ const JourneySection: React.FC = () => {
           {/* Awards */}
           <div className="grid md:grid-cols-2 gap-8">
             {/* UNIKAT Award */}
+            <div className="p-8 rounded-3xl bg-accent/20 border border-border/50 hover:shadow-lg transition-shadow duration-300 md:col-span-2">
+              <div className="flex items-start gap-4 mb-4 ">
+                <div className="p-3 rounded-xl border-border/50 bg-card">
+                  <Award className="w-8 h-8 text-accent" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-foreground mb-2">
+                    {t.journey.awards.impakt.title}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t.journey.awards.impakt.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* UNIKAT Award */}
             <div className="p-8 rounded-3xl bg-card border border-border/50 hover:shadow-lg transition-shadow duration-300">
               <div className="flex items-start gap-4 mb-4">
                 <div className="p-3 rounded-xl bg-accent/20">

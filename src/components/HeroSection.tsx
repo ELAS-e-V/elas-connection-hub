@@ -53,13 +53,6 @@ const HeroSection: React.FC = () => {
           </Button>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 rounded-full bg-primary/50 animate-scroll-indicator" />
-        </div>
-      </div>
     </section>
   );
 };
