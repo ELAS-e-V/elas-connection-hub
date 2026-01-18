@@ -1,7 +1,7 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Map, MapPin, Shield, Users, MessageCircle, Sparkles } from "lucide-react";
-import mapsBackground from "@/assets/maps.png";
+import mapsBackground from "@/assets/map-bg.png";
 
 const MapSection: React.FC = () => {
   const { t } = useLanguage();
@@ -11,10 +11,7 @@ const MapSection: React.FC = () => {
   return (
     <section id="map" className="py-20 md:py-32 overflow-hidden relative">
       {/* Background Map Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{ backgroundImage: `url(${mapsBackground})` }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -45,7 +42,9 @@ const MapSection: React.FC = () => {
                       <div className="p-2 rounded-lg bg-primary/10">
                         <IconComponent className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-foreground font-medium">{feature}</span>
+                      <span className="text-foreground font-medium">
+                        {feature}
+                      </span>
                     </div>
                   );
                 })}
@@ -54,12 +53,15 @@ const MapSection: React.FC = () => {
 
             {/* Right - Map Illustration */}
             <div className="relative">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/20 p-8 relative overflow-hidden">
+              <div
+                className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/20 p-8 relative overflow-hidden"
+                style={{ backgroundImage: `url(${mapsBackground})` , backgroundSize: 'cover'}}
+              >
                 {/* Decorative map elements */}
-                <div className="absolute inset-0 opacity-30">
+                <div className="absolute inset-0 opacity-80">
                   <div className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-accent animate-ping" />
                   <div className="absolute top-1/2 right-1/3 w-2 h-2 rounded-full bg-primary animate-ping animation-delay-200" />
-                  <div className="absolute bottom-1/3 left-1/2 w-4 h-4 rounded-full bg-warm animate-ping animation-delay-400" />
+                  <div className="absolute bottom-1/4 left-1/2 w-4 h-4 rounded-full bg-warm animate-ping animation-delay-400" />
                 </div>
 
                 {/* Central map icon */}
@@ -73,17 +75,17 @@ const MapSection: React.FC = () => {
                 </div>
 
                 {/* Grid lines */}
-                <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+                {/* <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
                       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#grid)" />
-                </svg>
+                </svg> */}
 
                 {/* Location pins */}
-                <div className="absolute top-10 right-10">
+                {/* <div className="absolute top-10 right-10">
                   <div className="p-2 rounded-full bg-card shadow-lg">
                     <MapPin className="w-5 h-5 text-accent" />
                   </div>
@@ -92,7 +94,7 @@ const MapSection: React.FC = () => {
                   <div className="p-2 rounded-full bg-card shadow-lg">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
