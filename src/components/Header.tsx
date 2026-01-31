@@ -1,24 +1,29 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoElas from "@/assets/logo-elas.png";
 import { MAP_CATEGORIES } from "@/map/config/categories";
 
 interface HeaderProps {
   onSelectCategory?: (id?: string) => void;
+  onSelectSubcategory?: (id?: string) => void;
   activeCategory?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({
   onSelectCategory,
+  onSelectSubcategory,
   activeCategory,
 }) => {
   const { language, setLanguage, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
+  // 🔹 controla expansão das subcategorias no mobile
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+
+  const location = useLocation();
   const isMapPage = location.pathname === "/map";
 
   const navItems = [
@@ -31,12 +36,12 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <header
-      className={`
+      className="
         fixed top-0 left-0 right-0
         bg-background/95 backdrop-blur-md
         border-b border-border/50
         z-[3000]
-      `}
+      "
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -57,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({
             </div>
           </a>
 
-          {/* Desktop nav (landing only) */}
+          {/* Desktop nav */}
           {!isMapPage && (
             <nav className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
@@ -93,14 +98,17 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* ================= MOBILE MENU ================= */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t bg-background">
+          <div className="md:hidden py-4 border-t bg-background 
+          max-h-[calc(100vh-4rem)] overflow-y-auto">
             {isMapPage ? (
               <div className="flex flex-col gap-1">
+                {/* Reset */}
                 <button
                   onClick={() => {
                     onSelectCategory?.(undefined);
+                    setExpandedCategory(null);
                     setIsMenuOpen(false);
                   }}
                   className="px-4 py-2 text-left text-sm hover:bg-muted rounded-md"
@@ -108,25 +116,60 @@ const Header: React.FC<HeaderProps> = ({
                   {t.mapUI.allCategories}
                 </button>
 
-                {MAP_CATEGORIES.map((c) => (
-                  <button
-                    key={c.id}
-                    onClick={() => {
-                      onSelectCategory?.(c.id);
-                      setIsMenuOpen(false);
-                    }}
-                    className={`flex items-center gap-3 px-4 py-2 text-left text-sm rounded-md hover:bg-muted ${activeCategory === c.id ? "font-semibold" : ""
-                      }`}
-                  >
-                    <img
-                      src={`/icons/${c.icon}`}
-                      alt=""
-                      className="h-4 w-4 shrink-0"
-                    />
-                    {t.mapUI.categories[c.labelKey]}
-                  </button>
-                ))}
+                {/* Categories */}
+                {MAP_CATEGORIES.map((c) => {
+                  const isExpanded = expandedCategory === c.id;
 
+                  return (
+                    <div key={c.id} className="flex flex-col">
+                      {/* Category button */}
+                      <button
+                        onClick={() => {
+                          onSelectCategory?.(c.id);
+                          setExpandedCategory(isExpanded ? null : c.id);
+                        }}
+                        className={`flex items-center justify-between gap-3 px-4 py-2 text-left text-sm rounded-md hover:bg-muted ${activeCategory === c.id ? "font-semibold" : ""
+                          }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <img
+                            src={`/icons/${c.icon}`}
+                            alt=""
+                            className="h-4 w-4 shrink-0"
+                          />
+                          {t.mapUI.categories[c.labelKey]}
+                        </div>
+
+                        {c.subcategories.length > 0 &&
+                          (isExpanded ? (
+                            <ChevronUp className="h-4 w-4" />
+                          ) : (
+                            <ChevronDown className="h-4 w-4" />
+                          ))}
+                      </button>
+
+                      {/* Subcategories */}
+                      {isExpanded && (
+                        <div className="ml-8 mt-1 flex flex-col gap-1">
+                          {c.subcategories.map((sub) => (
+                            <button
+                              key={sub.id}
+                              onClick={() => {
+                                onSelectCategory?.(c.id);
+                                onSelectSubcategory?.(sub.id);
+                                setIsMenuOpen(false);
+                                setExpandedCategory(null);
+                              }}
+                              className="px-3 py-1.5 text-left text-sm rounded-md hover:bg-muted"
+                            >
+                              {t.mapUI.subcategories[sub.labelKey]}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             ) : (
               <div className="flex flex-col gap-1">

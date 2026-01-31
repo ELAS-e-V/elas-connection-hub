@@ -12,6 +12,7 @@ import type { Location } from "@/lib/api/fetchLocations";
 
 export interface MapViewProps {
   category?: string;
+  subcategory?: string; // 🔹 NOVO (opcional)
 }
 
 /* =========================
@@ -20,12 +21,12 @@ export interface MapViewProps {
 const CENTER: LatLngExpression = [51.3133, 9.4989];
 const OVERVIEW_ZOOM = 11;
 const CATEGORY_ZOOM_PADDING = 80;
-const OVERVIEW_HIGHLIGHT_LIMIT = 15; //quantos pins ficam visíveis no overview
+const OVERVIEW_HIGHLIGHT_LIMIT = 15;
 
 /* =========================
  * Componente
  * ========================= */
-const MapView = ({ category }: MapViewProps) => {
+const MapView = ({ category, subcategory }: MapViewProps) => {
   const { data, isLoading } = useLocations();
   const mapRef = useRef<L.Map | null>(null);
 
@@ -36,13 +37,21 @@ const MapView = ({ category }: MapViewProps) => {
    * Dados
    * ========================= */
 
-  // 🔹 Locations filtradas apenas no modo categoria
+  // 🔹 Locations filtradas por categoria e subcategoria (quando existir)
   const filteredLocations: Location[] = useMemo(() => {
     if (!category || !data) return [];
-    return data.filter(
-      (location) => location.properties.categorySlug === category
-    );
-  }, [category, data]);
+
+    return data.filter((location) => {
+      const matchCategory =
+        location.properties.categorySlug === category;
+
+      const matchSubcategory = subcategory
+        ? location.properties.subcategorySlug === subcategory
+        : true;
+
+      return matchCategory && matchSubcategory;
+    });
+  }, [category, subcategory, data]);
 
   // 🔹 Overview: separa pins visíveis x cluster
   const overviewHighlighted: Location[] = useMemo(() => {
@@ -119,7 +128,6 @@ const MapView = ({ category }: MapViewProps) => {
        * OVERVIEW MODE
        * ========================= */}
 
-      {/* 🔹 Pins destacados */}
       {isOverview &&
         overviewHighlighted.map((location) => {
           const [lng, lat] = location.geometry.coordinates;
@@ -135,7 +143,6 @@ const MapView = ({ category }: MapViewProps) => {
           );
         })}
 
-      {/* 🔹 Cluster com o restante */}
       {isOverview && overviewClustered.length > 0 && (
         <MarkerClusterGroup chunkedLoading>
           {overviewClustered.map((location) => {
@@ -155,7 +162,7 @@ const MapView = ({ category }: MapViewProps) => {
       )}
 
       {/* =========================
-       * CATEGORY MODE
+       * CATEGORY / SUBCATEGORY MODE
        * ========================= */}
       {!isOverview &&
         filteredLocations.map((location) => {
