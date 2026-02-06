@@ -126,6 +126,7 @@ const Header: React.FC<HeaderProps> = ({
                       <button
                         onClick={() => {
                           setExpandedCategory(isExpanded ? null : c.id);
+                          onSelectCategory?.(c.id)
                         }}
                         className={`flex items-center justify-between gap-3 px-4 py-2 text-left text-sm rounded-md hover:bg-muted ${activeCategory === c.id ? "font-semibold" : ""
                           }`}
