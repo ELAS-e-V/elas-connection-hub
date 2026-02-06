@@ -136,8 +136,8 @@ export const MAP_CATEGORIES: MapCategory[] = [
     ],
   },
 
-  /*{
-    id: "communitySupport",
+  {
+    id: "community-support",
     icon: "community.svg",
     labelKey: "communitySupport",
     subcategories: [
@@ -149,7 +149,7 @@ export const MAP_CATEGORIES: MapCategory[] = [
       { id: "volunteeringCommunityEngagement", labelKey: "volunteeringCommunityEngagement" },
       { id: "other", labelKey: "other" },
     ],
-  },*/
+  },
   {
     id: "culture",
     icon: "culture.svg",

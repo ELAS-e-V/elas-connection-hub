@@ -144,15 +144,16 @@ export const translations = {
       explore: "Explore the map",
       allCategories: "All categories",
       categories: {
-        health: "Health",
-        legalSupport: "Legal support",
-        education: "Education",
-        culture: "Culture",
-        work: "Work",
-        socialService: "Social services",
-        housing: "Housing",
-        womenRights: "Women’s rights",
-        counseling: "Counseling",
+        health: "Health", //OK
+        education: "Education", //Ok
+        legalSupport: "Legal support", //OK
+        work: "Work", //ok
+        socialService: "Social services", //access to social services (planilha atualizada)
+        housing: "Housing", //ok
+        communitySupport: "Community support", //community support groups (planilha atualizada)
+        culture: "Culture",  //culture & socializing (planilha atualizada) 
+        //womenRights: "Women’s rights", //não está na planilha
+        counseling: "Counseling", //existe na NV
       },
       subcategories: {
         familyDoctor: "Family doctor",
@@ -226,6 +227,11 @@ export const translations = {
         foodBanks: "Food banks",
         parentingSupportGroups: "Parenting support groups",
         womenSupportGroups: "Women’s support groups",
+        lgbtqiaSpacesGroups: "LGBTQIA+ Spaces & Groups",
+        migrantDiasporaCommunities: "Migrant & Diaspora communities",
+        communitySupportGroups: "Community Support Groups",
+        volunteeringCommunityEngagement: "Volunteering & Community Engagement",
+
 
         rentalAgenciesHousingSearch: "Rental agencies & housing search",
         temporaryHousing: "Temporary housing",
@@ -392,15 +398,16 @@ export const translations = {
       explore: "Karte entdecken",
       allCategories: "Alle Kategorien",
       categories: {
-        health: "Gesundheit",
-        legalSupport: "Rechtsberatung",
-        education: "Bildung",
-        culture: "Kultur",
-        work: "Arbeit",
-        socialService: "Soziale Dienste",
-        housing: "Wohnen",
-        womenRights: "Frauenrechte",
-        counseling: "Beratung",
+        health: "Gesundheit", //ok
+        education: "Bildung", //ok
+        legalSupport: "Rechtsberatung", //ok
+        work: "Arbeit", //ok
+        socialService: "Soziale Dienste", //access to social services (planilha atualizada)
+        housing: "Wohnen", //ok
+        communitySupport: "Community-Unterstützung", //community support groups (planilha atualizada)        
+        culture: "Kultur", //culture & socializing (planilha atualizada)       
+        //womenRights: "Frauenrechte", //não está na planilha
+        counseling: "Beratung", //existe na NV
       },
       subcategories: {
         familyDoctor: "Hausarzt / Hausärztin",
@@ -474,6 +481,10 @@ export const translations = {
         foodBanks: "Tafeln",
         parentingSupportGroups: "Elterngruppen",
         womenSupportGroups: "Frauengruppen",
+        lgbtqiaSpacesGroups: "LGBTQIA+ Selbsthilfegruppen",
+        migrantDiasporaCommunities: "Integrationsgruppen für Migrant*innen",
+        communitySupportGroups: "Community-Selbsthilfegruppen",
+        volunteeringCommunityEngagement: "Freiwilligenarbeit und gesellschaftliches Engagement",
 
         rentalAgenciesHousingSearch: "Wohnungssuche & Vermittlung",
         temporaryHousing: "Übergangsunterkünfte",
