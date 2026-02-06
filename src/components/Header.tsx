@@ -100,8 +100,8 @@ const Header: React.FC<HeaderProps> = ({
 
         {/* ================= MOBILE MENU ================= */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t bg-background 
-          max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="md:hidden py-4 border-t bg-background
+          h-[100dvh] overflow-y-auto pb-24">
             {isMapPage ? (
               <div className="flex flex-col gap-1">
                 {/* Reset */}
@@ -125,7 +125,6 @@ const Header: React.FC<HeaderProps> = ({
                       {/* Category button */}
                       <button
                         onClick={() => {
-                          onSelectCategory?.(c.id);
                           setExpandedCategory(isExpanded ? null : c.id);
                         }}
                         className={`flex items-center justify-between gap-3 px-4 py-2 text-left text-sm rounded-md hover:bg-muted ${activeCategory === c.id ? "font-semibold" : ""
@@ -150,7 +149,8 @@ const Header: React.FC<HeaderProps> = ({
 
                       {/* Subcategories */}
                       {isExpanded && (
-                        <div className="ml-8 mt-1 flex flex-col gap-1">
+                        <div className="ml-8 mt-1 flex flex-col gap-1
+                        overflow-visible">
                           {c.subcategories.map((sub) => (
                             <button
                               key={sub.id}

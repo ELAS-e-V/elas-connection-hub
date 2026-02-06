@@ -7,8 +7,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const MapPage = () => {
   const { t } = useLanguage();
 
+  const [expandedCategory, setExpandedCategory] = useState<string|null>(null);
   const [category, setCategory] = useState<string | undefined>();
-  const [subcategory, setSubcategory] = useState<string | undefined>(); // 🔹 NOVO
+  const [subcategory, setSubcategory] = useState<string | undefined>(); 
 
   return (
     <div className="h-screen flex flex-col overflow-hidden">
@@ -36,7 +37,8 @@ const MapPage = () => {
             <button
               onClick={() => {
                 setCategory(undefined);
-                setSubcategory(undefined); // 🔹 reset total
+                setSubcategory(undefined);
+                setExpandedCategory(null); 
               }}
               className="rounded-md border px-3 py-2 text-sm hover:bg-muted"
             >
@@ -53,8 +55,13 @@ const MapPage = () => {
                   {/* Categoria */}
                   <button
                     onClick={() => {
-                      setCategory(c.id);
-                      setSubcategory(undefined);
+                      if (expandedCategory === c.id) {
+                        setExpandedCategory(null);
+                      } else {
+                        setCategory(c.id);
+                        setSubcategory(undefined);
+                        setExpandedCategory(c.id)
+                      }                      
                     }}
                     className={`flex items-center gap-3 rounded-md border px-3 py-2 text-sm transition ${isActive ? "bg-muted font-medium" : "hover:bg-muted"
                       }`}
@@ -68,7 +75,7 @@ const MapPage = () => {
                   </button>
 
                   {/* Subcategorias */}
-                  {isActive && c.subcategories.length > 0 && (
+                  {expandedCategory === c.id && c.subcategories.length > 0 && (
                     <div className="ml-8 flex flex-col gap-1 max-h-64 overflow-y-auto pr-2">
                       {c.subcategories.map((sub) => (
                         <button
