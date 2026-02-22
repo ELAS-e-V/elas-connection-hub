@@ -10,7 +10,7 @@ export const translations = {
     hero: {
       title: "Empowering Migrant Communities",
       subtitle:
-        "ELAS e.V. — A registered non-profit association in Germany providing information and support for migrant women, FLINTA, queer and marginalized communities.",
+        "ELAS e.V. — A registered non-profit organization in Germany providing information and support for migrant women, FLINTA, queer and marginalized communities.",
       cta: "Learn More",
       location: "Kassel, Germany",
     },
@@ -66,7 +66,7 @@ export const translations = {
     journey: {
       title: "Our Journey",
       story:
-        "The ELAS collective was born from the exchange of ideas and experiences between two friends who, while facing the challenges of adapting to a new country, realized how difficult and isolating the process could be. Inspired by the stories of countless immigrant women, they began reflecting on what could have made their own journeys—and those of many others in similar situations—easier.",
+        "The ELAS collective was born from the exchange of ideas and experiences between two friends who, while facing the challenges of adapting to a new country, realized how difficult and isolating the process could be. Inspired by the stories of countless immigrant women, they began reflecting on what could have made their own journeys — and those of many others in similar situations — easier.",
       crowdfunding: {
         title: "UNIKAT Crowdfunding 2022",
         description:
@@ -97,7 +97,7 @@ export const translations = {
       },
     },
     sdgs: {
-      title: "Aligned with UN Sustainable Development Goals",
+      title: "We are aligned with the UN Sustainable Development Goals",
       goals: [
         {
           title: "Gender Equality",
@@ -110,7 +110,7 @@ export const translations = {
             "Facilitating social, economic, and cultural inclusion of migrant women.",
         },
         {
-          title: "Sustainable Cities",
+          title: "Sustainable Cities and Communities",
           description:
             "Contributing to a more inclusive and sustainable Kassel.",
         },
@@ -135,7 +135,7 @@ export const translations = {
     footer: {
       rights: "All rights reserved.",
       nonprofit:
-        "Registered non-profit association (gemeinnütziger Verein) in Germany",
+        "Registered non-profit organization (gemeinnütziger Verein) in Germany",
     },
     common: {
       backToHome: "Back to home",
@@ -150,14 +150,14 @@ export const translations = {
         work: "Work", //ok
         socialService: "Social services", //access to social services (planilha atualizada)
         housing: "Housing", //ok
-        communitySupport: "Community support", //community support groups (planilha atualizada)
+        communitySupport: "Community support", //Community support groups (planilha atualizada)
         culture: "Culture",  //culture & socializing (planilha atualizada) 
         //womenRights: "Women’s rights", //não está na planilha
         counseling: "Counseling", //existe na NV
       },
       subcategories: {
         familyDoctor: "Family doctor",
-        primaryCareClinic: "Primary care clinic",
+        primaryCareClinic: "General practice",
         pediatrics: "Pediatrics",
         gynecology: "Gynecology",
         reproductiveHealth: "Reproductive health",
@@ -177,7 +177,7 @@ export const translations = {
         physicalTherapy: "Physical therapy",
         occupationalTherapy: "Occupational therapy",
         hospital: "Hospital",
-        medicalClinic: "Medical clinic",
+        medicalClinic: "Medical clinics",
         specialistClinics: "Specialist clinics",
         emergencyServices: "Emergency services",
         dentistry: "Dentistry",
@@ -227,10 +227,10 @@ export const translations = {
         foodBanks: "Food banks",
         parentingSupportGroups: "Parenting support groups",
         womenSupportGroups: "Women’s support groups",
-        lgbtqiaSpacesGroups: "LGBTQIA+ Spaces & Groups",
+        lgbtqiaSpacesGroups: "LGBTQIA+ spaces & groups",
         migrantDiasporaCommunities: "Migrant & Diaspora communities",
-        communitySupportGroups: "Community Support Groups",
-        volunteeringCommunityEngagement: "Volunteering & Community Engagement",
+        communitySupportGroups: "Community support groups",
+        volunteeringCommunityEngagement: "Volunteering & community engagement",
 
 
         rentalAgenciesHousingSearch: "Rental agencies & housing search",
@@ -404,7 +404,7 @@ export const translations = {
         work: "Arbeit", //ok
         socialService: "Soziale Dienste", //access to social services (planilha atualizada)
         housing: "Wohnen", //ok
-        communitySupport: "Community-Unterstützung", //community support groups (planilha atualizada)        
+        communitySupport: "Community-Unterstützung", //Community support groups (planilha atualizada)        
         culture: "Kultur", //culture & socializing (planilha atualizada)       
         //womenRights: "Frauenrechte", //não está na planilha
         counseling: "Beratung", //existe na NV
