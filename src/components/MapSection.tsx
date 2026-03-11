@@ -1,8 +1,15 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Map, MapPin, Shield, Users, MessageCircle, Sparkles } from "lucide-react";
+import {
+  Map,
+  MapPin,
+  Shield,
+  Users,
+  MessageCircle,
+  Sparkles,
+} from "lucide-react";
 import { Link } from "react-router-dom";
-import mapsBackground from "@/assets/maps.png";
+import mapsBackground from "@/assets/map-bg.png";
 
 const MapSection: React.FC = () => {
   const { t } = useLanguage();
@@ -67,7 +74,10 @@ const MapSection: React.FC = () => {
             <div className="relative">
               <div
                 className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/20 p-8 relative overflow-hidden"
-                style={{ backgroundImage: `url(${mapsBackground})` , backgroundSize: 'cover'}}
+                style={{
+                  backgroundImage: `url(${mapsBackground})`,
+                  backgroundSize: "cover",
+                }}
               >
                 {/* Decorative map elements */}
                 <div className="absolute inset-0 opacity-80">
@@ -96,10 +106,9 @@ const MapSection: React.FC = () => {
                   <div className="p-2 rounded-full bg-card shadow-lg">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
-                </div> 
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
