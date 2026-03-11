@@ -10,7 +10,7 @@ export const translations = {
     hero: {
       title: "Empowering Migrant Communities",
       subtitle:
-        "ELAS e.V. — A registered non-profit association in Germany providing information and support for migrant women, FLINTA, queer and marginalized communities.",
+        "ELAS e.V. — A registered non-profit organization in Germany providing information and support for migrant women, FLINTA, queer and marginalized communities.",
       cta: "Learn More",
       location: "Kassel, Germany",
     },
@@ -54,9 +54,8 @@ export const translations = {
     },
     map: {
       title: "Interactive Map",
-      comingSoon: "Coming Soon",
-      description:
-        "Our interactive map tool is currently under construction. Soon you'll be able to discover safe spaces, resources, and community services in Kassel — all in one place.",
+      exploreCta: "Explore the map",
+      description: "Our interactive map helps you discover safe spaces, resources, and community services in Kassel — all in one place.",
       features: [
         "Find safe and welcoming spaces",
         "Locate community resources",
@@ -67,7 +66,7 @@ export const translations = {
     journey: {
       title: "Our Journey",
       story:
-        "The ELAS collective was born from the exchange of ideas and experiences between two friends who, while facing the challenges of adapting to a new country, realized how difficult and isolating the process could be. Inspired by the stories of countless immigrant women, they began reflecting on what could have made their own journeys—and those of many others in similar situations—easier.",
+        "The ELAS collective was born from the exchange of ideas and experiences between two friends who, while facing the challenges of adapting to a new country, realized how difficult and isolating the process could be. Inspired by the stories of countless immigrant women, they began reflecting on what could have made their own journeys — and those of many others in similar situations — easier.",
       crowdfunding: {
         title: "UNIKAT Crowdfunding 2022",
         description:
@@ -98,7 +97,7 @@ export const translations = {
       },
     },
     sdgs: {
-      title: "Aligned with UN Sustainable Development Goals",
+      title: "We are aligned with the UN Sustainable Development Goals",
       goals: [
         {
           title: "Gender Equality",
@@ -111,7 +110,7 @@ export const translations = {
             "Facilitating social, economic, and cultural inclusion of migrant women.",
         },
         {
-          title: "Sustainable Cities",
+          title: "Sustainable Cities and Communities",
           description:
             "Contributing to a more inclusive and sustainable Kassel.",
         },
@@ -136,7 +135,123 @@ export const translations = {
     footer: {
       rights: "All rights reserved.",
       nonprofit:
-        "Registered non-profit association (gemeinnütziger Verein) in Germany",
+        "Registered non-profit organization (gemeinnütziger Verein) in Germany",
+    },
+    common: {
+      backToHome: "Back to home",
+    },
+    mapUI: {
+      explore: "Explore the map",
+      allCategories: "All categories",
+      categories: {
+        health: "Health", //OK
+        education: "Education", //Ok
+        legalSupport: "Legal support", //OK
+        work: "Work", //ok
+        socialService: "Social services", //access to social services (planilha atualizada)
+        housing: "Housing", //ok
+        communitySupport: "Community support", //Community support groups (planilha atualizada)
+        culture: "Culture",  //culture & socializing (planilha atualizada) 
+        //womenRights: "Women’s rights", //não está na planilha
+        counseling: "Counseling", //existe na NV
+      },
+      subcategories: {
+        familyDoctor: "Family doctor",
+        primaryCareClinic: "General practice",
+        pediatrics: "Pediatrics",
+        gynecology: "Gynecology",
+        reproductiveHealth: "Reproductive health",
+        dermatology: "Dermatology",
+        orthopedics: "Orthopedics",
+        urology: "Urology",
+        psychiatry: "Psychiatry",
+        eyeCare: "Eye care",
+        ent: "ENT",
+        radiologyImaging: "Radiology / Imaging",
+        surgery: "Surgery",
+        plasticSurgery: "Plastic surgery",
+        psychology: "Psychology",
+        mentalHealthSupport: "Mental health support",
+        therapyCounseling: "Therapy / Counseling",
+        mentalHealthHotlines: "Mental health hotlines",
+        physicalTherapy: "Physical therapy",
+        occupationalTherapy: "Occupational therapy",
+        hospital: "Hospital",
+        medicalClinic: "Medical clinics",
+        specialistClinics: "Specialist clinics",
+        emergencyServices: "Emergency services",
+        dentistry: "Dentistry",
+        other: "Other",
+
+        kindergartenPreschool: "Kindergarten / Preschool",
+        schoolPrimarySecondary: "Primary & secondary school",
+        languageCourses: "Language courses",
+        integrationCourses: "Integration courses",
+        continuingEducation: "Continuing education",
+        vocationalTraining: "Vocational training",
+        computerDigitalSkills: "Computer & digital skills",
+        universityCollege: "University / College",
+        certificationAuthorities: "Certification authorities",
+        educationalConsulting: "Educational consulting",
+
+        lawyersLawFirms: "Lawyers & law firms",
+        notaryServices: "Notary services",
+        legalAidOrganizations: "Legal aid organizations",
+        legalCounselingCenters: "Legal counseling centers",
+        immigrationLegalServices: "Immigration legal services",
+        refugeeAsylumSupport: "Refugee & asylum support",
+        policeStations: "Police stations",
+        governmentLegalOffices: "Government legal offices",
+        humanRightsOrganizations: "Human rights organizations",
+        advocacyGroups: "Advocacy groups",
+        equalOpportunityOrganizations: "Equal opportunity organizations",
+        emergencyAid: "Emergency legal aid",
+        shelters: "Shelters",
+        legalTranslationInterpreting: "Legal translation & interpreting",
+
+        jobcenter: "Jobcenter",
+        jobAgencies: "Job agencies",
+        careerConsultingCoaching: "Career consulting & coaching",
+        mentorshipPrograms: "Mentorship programs",
+        languageCareerDevelopment: "Language & career development",
+        jobTrainingPrograms: "Job training programs",
+        professionalSkillsDevelopment: "Professional skills development",
+        smallBusinessSupport: "Small business support",
+        entrepreneurshipPrograms: "Entrepreneurship programs",
+        financialEducationWork: "Financial education",
+
+        socialWorkers: "Social workers",
+        socialWelfareServices: "Social welfare services",
+        financialAssistanceGovernment: "Financial assistance",
+        integrationSupportCenters: "Integration support centers",
+        foodBanks: "Food banks",
+        parentingSupportGroups: "Parenting support groups",
+        womenSupportGroups: "Women’s support groups",
+        lgbtqiaSpacesGroups: "LGBTQIA+ spaces & groups",
+        migrantDiasporaCommunities: "Migrant & Diaspora communities",
+        communitySupportGroups: "Community support groups",
+        volunteeringCommunityEngagement: "Volunteering & community engagement",
+
+
+        rentalAgenciesHousingSearch: "Rental agencies & housing search",
+        temporaryHousing: "Temporary housing",
+        publicSocialHousing: "Public / social housing",
+        emergencyShelters: "Emergency shelters",
+
+        museum: "Museum",
+        galleries: "Galleries",
+        culturalCenters: "Cultural centers",
+        libraries: "Libraries",
+        movieTheaters: "Movie theaters",
+        theaters: "Theaters",
+        danceSchools: "Dance schools",
+        artCreativityPrograms: "Art & creativity programs",
+        parksPlaygrounds: "Parks & playgrounds",
+        sportsRecreation: "Sports & recreation",
+        placesOfWorship: "Places of worship",
+        culturalDiversityOrganizations: "Cultural & diversity organizations",
+        volunteeringCommunityWork: "Volunteering",
+      },
     },
   },
   de: {
@@ -194,9 +309,8 @@ export const translations = {
     },
     map: {
       title: "Interaktive Karte",
-      comingSoon: "Demnächst verfügbar",
-      description:
-        "Unser interaktives Kartentool befindet sich derzeit im Aufbau. Bald können Sie sichere Orte, Ressourcen und Gemeinschaftsdienste in Kassel entdecken — alles an einem Ort.",
+      exploreCta: "Karte entdecken",
+      description: "Unsere interaktive Karte hilft Ihnen, sichere Orte, Ressourcen und Gemeinschaftsdienste in Kassel zu entdecken — alles an einem Ort.",
       features: [
         "Sichere und einladende Orte finden",
         "Gemeinschaftsressourcen lokalisieren",
@@ -276,6 +390,121 @@ export const translations = {
     footer: {
       rights: "Alle Rechte vorbehalten.",
       nonprofit: "Eingetragener gemeinnütziger Verein in Deutschland",
+    },
+    common: {
+      backToHome: "Zurück zur Startseite",
+    },
+    mapUI: {
+      explore: "Karte entdecken",
+      allCategories: "Alle Kategorien",
+      categories: {
+        health: "Gesundheit", //ok
+        education: "Bildung", //ok
+        legalSupport: "Rechtsberatung", //ok
+        work: "Arbeit", //ok
+        socialService: "Soziale Dienste", //access to social services (planilha atualizada)
+        housing: "Wohnen", //ok
+        communitySupport: "Community-Unterstützung", //Community support groups (planilha atualizada)        
+        culture: "Kultur", //culture & socializing (planilha atualizada)       
+        //womenRights: "Frauenrechte", //não está na planilha
+        counseling: "Beratung", //existe na NV
+      },
+      subcategories: {
+        familyDoctor: "Hausarzt / Hausärztin",
+        primaryCareClinic: "Allgemeinarztpraxis",
+        pediatrics: "Kinderheilkunde",
+        gynecology: "Gynäkologie",
+        reproductiveHealth: "Reproduktive Gesundheit",
+        dermatology: "Dermatologie",
+        orthopedics: "Orthopädie",
+        urology: "Urologie",
+        psychiatry: "Psychiatrie",
+        eyeCare: "Augenheilkunde",
+        ent: "HNO",
+        radiologyImaging: "Radiologie / Bildgebung",
+        surgery: "Chirurgie",
+        plasticSurgery: "Plastische Chirurgie",
+        psychology: "Psychologie",
+        mentalHealthSupport: "Psychische Gesundheit",
+        therapyCounseling: "Therapie / Beratung",
+        mentalHealthHotlines: "Hotlines für psychische Gesundheit",
+        physicalTherapy: "Physiotherapie",
+        occupationalTherapy: "Ergotherapie",
+        hospital: "Krankenhaus",
+        medicalClinic: "Arztpraxis",
+        specialistClinics: "Facharztpraxen",
+        emergencyServices: "Notfalldienste",
+        dentistry: "Zahnmedizin",
+        other: "Sonstiges",
+
+        kindergartenPreschool: "Kindergarten",
+        schoolPrimarySecondary: "Grund- & weiterführende Schule",
+        languageCourses: "Sprachkurse",
+        integrationCourses: "Integrationskurse",
+        continuingEducation: "Weiterbildung",
+        vocationalTraining: "Berufsausbildung",
+        computerDigitalSkills: "Digitale Kompetenzen",
+        universityCollege: "Universität / Hochschule",
+        certificationAuthorities: "Anerkennungsstellen",
+        educationalConsulting: "Bildungsberatung",
+
+        lawyersLawFirms: "Rechtsanwälte & Kanzleien",
+        notaryServices: "Notardienste",
+        legalAidOrganizations: "Rechtsberatungsstellen",
+        legalCounselingCenters: "Beratungszentren",
+        immigrationLegalServices: "Migrationsrecht",
+        refugeeAsylumSupport: "Flüchtlings- & Asylhilfe",
+        policeStations: "Polizei",
+        governmentLegalOffices: "Behörden",
+        humanRightsOrganizations: "Menschenrechtsorganisationen",
+        advocacyGroups: "Interessenvertretungen",
+        equalOpportunityOrganizations: "Gleichstellungsstellen",
+        emergencyAid: "Rechtshilfe im Notfall",
+        shelters: "Schutzeinrichtungen",
+        legalTranslationInterpreting: "Juristische Übersetzungen",
+
+        jobcenter: "Jobcenter",
+        jobAgencies: "Arbeitsvermittlung",
+        careerConsultingCoaching: "Karriereberatung",
+        mentorshipPrograms: "Mentoringprogramme",
+        languageCareerDevelopment: "Sprach- & Karriereentwicklung",
+        jobTrainingPrograms: "Qualifizierungsprogramme",
+        professionalSkillsDevelopment: "Berufliche Kompetenzen",
+        smallBusinessSupport: "Unternehmensförderung",
+        entrepreneurshipPrograms: "Gründungsprogramme",
+        financialEducationWork: "Finanzbildung",
+
+        socialWorkers: "Sozialarbeiter",
+        socialWelfareServices: "Sozialleistungen",
+        financialAssistanceGovernment: "Finanzielle Unterstützung",
+        integrationSupportCenters: "Integrationszentren",
+        foodBanks: "Tafeln",
+        parentingSupportGroups: "Elterngruppen",
+        womenSupportGroups: "Frauengruppen",
+        lgbtqiaSpacesGroups: "LGBTQIA+ Selbsthilfegruppen",
+        migrantDiasporaCommunities: "Integrationsgruppen für Migrant*innen",
+        communitySupportGroups: "Community-Selbsthilfegruppen",
+        volunteeringCommunityEngagement: "Freiwilligenarbeit und gesellschaftliches Engagement",
+
+        rentalAgenciesHousingSearch: "Wohnungssuche & Vermittlung",
+        temporaryHousing: "Übergangsunterkünfte",
+        publicSocialHousing: "Sozialwohnungen",
+        emergencyShelters: "Notunterkünfte",
+
+        museum: "Museen",
+        galleries: "Galerien",
+        culturalCenters: "Kulturzentren",
+        libraries: "Bibliotheken",
+        movieTheaters: "Kinos",
+        theaters: "Theater",
+        danceSchools: "Tanzschulen",
+        artCreativityPrograms: "Kreativprogramme",
+        parksPlaygrounds: "Parks & Spielplätze",
+        sportsRecreation: "Sport & Freizeit",
+        placesOfWorship: "Gotteshäuser",
+        culturalDiversityOrganizations: "Kultur- & Diversitätsvereine",
+        volunteeringCommunityWork: "Ehrenamt",
+      },
     },
   },
 };
