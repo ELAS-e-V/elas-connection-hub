@@ -1,8 +1,7 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Map, MapPin, Shield, Users, MessageCircle, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
-import mapsBackground from "@/assets/maps.png";
+import mapsBackground from "@/assets/map-bg.png";
 
 const MapSection: React.FC = () => {
   const { t } = useLanguage();
@@ -11,27 +10,18 @@ const MapSection: React.FC = () => {
 
   return (
     <section id="map" className="py-20 md:py-32 overflow-hidden relative">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{ backgroundImage: `url(${mapsBackground})` }}
-      />
+      {/* Background Map Image */}
+      <div className="absolute inset-0 bg-cover bg-center opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
-
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8">
-              {/* CTA para o mapa */}
-              <Link
-                to="/map"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full
-                           bg-accent text-accent-foreground text-sm font-bold
-                           hover:bg-accent/80 transition animate-pulse"
-              >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-bold animate-pulse">
                 <Sparkles className="w-4 h-4" />
-                <span>{t.map.exploreCta}</span>
-              </Link>
+                <span>{t.map.comingSoon}</span>
+              </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
                 {t.map.title}
@@ -47,9 +37,7 @@ const MapSection: React.FC = () => {
                   return (
                     <div
                       key={index}
-                      className="flex items-center gap-4 p-4 rounded-xl
-                                 bg-card/80 backdrop-blur-sm
-                                 border border-border/50"
+                      className="flex items-center gap-4 p-4 rounded-xl bg-card/80 backdrop-blur-sm border border-border/50"
                     >
                       <div className="p-2 rounded-lg bg-primary/10">
                         <IconComponent className="w-5 h-5 text-primary" />
@@ -86,8 +74,18 @@ const MapSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Pins */}
-                <div className="absolute top-10 right-10">
+                {/* Grid lines */}
+                {/* <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg> */}
+
+                {/* Location pins */}
+                {/* <div className="absolute top-10 right-10">
                   <div className="p-2 rounded-full bg-card shadow-lg">
                     <MapPin className="w-5 h-5 text-accent" />
                   </div>
@@ -96,10 +94,9 @@ const MapSection: React.FC = () => {
                   <div className="p-2 rounded-full bg-card shadow-lg">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
-                </div> 
+                </div> */}
               </div>
             </div>
-
           </div>
         </div>
       </div>

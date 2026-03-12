@@ -15,7 +15,7 @@ const AboutSection: React.FC = () => {
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
                 <Heart className="w-4 h-4" />
-                <span>Non-profit organization</span>
+                <span>Non-profit Organization</span>
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
@@ -50,7 +50,7 @@ const AboutSection: React.FC = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-card border border-border/50 shadow-soft text-center">
                   <Users className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <p className="text-sm font-medium text-foreground">Community-led</p>
+                  <p className="text-sm font-medium text-foreground">Community Led</p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-card border border-border/50 shadow-soft text-center">
