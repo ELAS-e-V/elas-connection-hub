@@ -8,20 +8,53 @@
     <meta name="author" content="ELAS e.V." />
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="/favicon.ico">
+    <!-- Favicons and app icons: replace placeholder.svg/favicon.ico with real brand assets on the server -->
+    <link rel="icon" href="https://elas-de.org/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="https://elas-de.org/logo-elas.svg" type="image/svg+xml" />
+    <link rel="icon" href="/logo-elas.svg" sizes="any" />
+    <link rel="apple-touch-icon" href="https://elas-de.org/logo-elas.svg" />
 
     <!-- Language alternates -->
     <link rel="alternate" href="https://elas-de.org/" hreflang="de" />
-    <link rel="alternate" href="https://elas-de.org/en/" hreflang="en" />
+    <link rel="alternate" href="https://elas-de.org/" hreflang="en" />
     <link rel="canonical" href="https://elas-de.org" />
 
-    <!-- Structured data (Organization) -->
+    <!-- Ensure english alternate points to URL with ?lang=en so searches open en version -->
+    <script>
+      (function () {
+        try {
+          const enLink = document.querySelector('link[hreflang="en"]');
+          if (!enLink) return;
+
+          // Force the english alternate to include lang=en so shared/crawled links
+          // point to the English version (e.g. https://elas-de.org/?lang=en)
+          const url = new URL(enLink.getAttribute('href') || window.location.href);
+          url.searchParams.set('lang', 'en');
+          enLink.setAttribute('href', url.toString());
+
+          // If current page has lang=en, also update the en alternate to the current page
+          const current = new URL(window.location.href);
+          if (current.searchParams.get('lang') === 'en') {
+            const currentEn = new URL(window.location.href);
+            currentEn.searchParams.set('lang', 'en');
+            enLink.setAttribute('href', currentEn.toString());
+          }
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
+
+        <!-- Structured data (Organization) -->
+        <!-- Prefer providing both an SVG (for site display) and a PNG (for Search/structured data).
+          Ensure /logo-elas.png and /logo-elas.svg exist on the production host. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "ELAS e.V.",
       "url": "https://elas-de.org",
-      "logo": "https://elas-de.org/src/assets/logo-elas.png",
+      "logo": "https://elas-de.org/logo-elas.png",
       "contactPoint": [{
         "@type": "ContactPoint",
         "email": "hello@elas-de.org",
@@ -40,7 +73,7 @@
     </script>
 
     <meta property="og:title" content="ELAS e.V. — Empowering Migrant Communities" />
-    <meta property="og:description" content="A registered non-profit association providing information and support for migrant women, FLINTA, queer and marginalized communities." />
+    <meta property="og:description" content="A registered non-profit organization providing information and support for migrant women, FLINTA, queer and marginalized communities." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://elas-de.org/og-image.v1.png" />
     <meta property="og:image:width" content="1200" />
